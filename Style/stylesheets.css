@@ -1,3 +1,35 @@
-h1{
-    background-color: blue;
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "item1 item2 item3";
+    height: 100px;
+}
+
+.item1{
+    grid-area: item1;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item2{
+    grid-area: item2;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item3{
+    grid-area: item3;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
