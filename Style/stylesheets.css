@@ -2,34 +2,55 @@ body{
     margin: 0;
     padding: 0;
 }
-
-.container{
-    display: grid;
-    grid-template-areas: 
-    "item1 item2 item3";
-    height: 100px;
-}
-
-.item1{
-    grid-area: item1;
-    border: black solid 1px;
+/************** HEADER ***************/
+.header{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.item2{
-    grid-area: item2;
-    border: black solid 1px;
+
+/************** NAVBAR ***************/
+.nav ul{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
 }
 
-.item3{
-    grid-area: item3;
-    border: black solid 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav li{
+    list-style: none;
 }
+/************** GALERIA ***************/
+
+.galeria{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.galeria-img{
+    margin: 15px;
+    height: 400px;
+    width: 45%;
+    border: solid 1px black;
+}
+
+
+
+
+
+/************** Mobile Desktop Tablet ***************/
+@media (max-width: 750px){
+    .nav ul{
+        flex-direction: column;
+    }
+
+
+}
+
+
+/*  Seguir Modificando directo en el flex y galeria en mobile primero despues para Tablet y Desktop*/
