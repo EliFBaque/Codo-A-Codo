@@ -1,56 +1,29 @@
-/*
 body{
     margin: 0;
     padding: 0;
 }
-*/
-/************** HEADER **************
-.header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-*/
-
-/************** NAVBAR **************
-.nav ul{
-    display: flex;
-    text-align: center;
-    justify-content: space-evenly;
-}
-
-.nav li{
-    list-style: none;
-}
-*/
-/************** GALERIA **************
-
-.galeria{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.galeria-img{
-    margin: 15px;
-    height: 400px;
-    width: 45%;
-    border: solid 1px black;
-}
-
-*/
+/********************************************/
+/**************** INDEX.HTML ****************/
+/********************************************/
 .nav a{
     text-decoration: none;
     color: black;
 }
 
+/********************************************/
+/*************** GALERIA.HTML ***************/
+/********************************************/
+.menu-contenidos ul{
+    list-style: none;
+}
+
+/********************************************/
+/**************** FORM.HTML *****************/
+/********************************************/
+
 
 /************** Mobile Desktop Tablet ***************/
-/* Mobile */
+/* Mobile IPHONE 6/7/8 PLUS */
 @media only screen and (max-width: 500px){
 
     /*********** HEADER ************/
@@ -96,10 +69,40 @@ body{
     /*********** FOOTER ************/ /* Modificar Posiciones */
     .footer{
         display: flex;
-        position: static;
+        position: bottom;
         justify-content: space-evenly;
     }
 
+
+    /*************************************/
+    /*********** GALERIA.HTML ************/
+    /*************************************/
+
+    /*********** TITULO Y MENU ***********/
+    .titulo-galeria{
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;       
+    }
+
+    .contenidos-fila{
+        border: 1px solid black;
+        width: 100%;
+    }
+
+    .contenidos-fila p{
+        margin: 0;
+    }
+
+    /******* CONTENIDOS DEL MENU *******/
+    .contenidos-galeria{
+        border: 1px solid black;
+    }
 }
 
 
