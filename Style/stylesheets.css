@@ -2,8 +2,6 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Kanit', sans-serif;
-    background: rgb(186,195,34);
-    background: linear-gradient(0deg, rgba(186,195,34,1) 0%, rgb(226, 101, 42) 73%);
 }
 /***********************************************************************************************************************************************/
 /***************************************************************** INDEX.HTML ******************************************************************/
@@ -12,7 +10,9 @@ body{
 /**********HEADER**********/
 .header{
     display: flex;
-    justify-content: space-evenly;
+    background-image: url("/media/PalmeraHeader.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .sociales-header{
@@ -24,29 +24,27 @@ body{
     margin: 30px 30px;
     font-size: 30px;
 }
+
 .img-header{
     display: flex;
+    align-items: center;   
 }
 
 .img-header img{
     width: 50%;
 }
 
-.contacto-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /**********NAVBAR**********/
 .barra{
     display: flex;
     justify-content: space-evenly;
+    background-color: black;
 }
 
 .barra a {
     text-decoration: none;
-    color: #ffffffc5;
+    color: #6e6363c5;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 18px;
@@ -55,7 +53,7 @@ body{
 }
 
 .barra a:hover {
-    color: #000;
+    color: rgb(194, 193, 193);
 }
 
 /**********GALERIA DE ITEMS**********/
@@ -70,10 +68,11 @@ body{
 .galeria-img{
     display: flex;
     flex-direction: column;
+    margin: 40px 40px 10px 10px;
     width: 260px;
     height: 500px;
     justify-content: center;
-    border: 1px solid black;
+    background-color: rgb(255, 81, 0);
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     
@@ -97,10 +96,17 @@ body{
 
 
 /**********BTN MAS**********/
+.btn-ayuda{
+    text-align: center;
+}
+
 .btn-ayuda button{
-    background-color: rgba(190, 22, 22, 0.555);
+    background-color: rgb(202, 34, 34);
     color: white;
     border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 7px;
 }
 
 .btn-ayuda button:hover{
@@ -110,10 +116,14 @@ body{
 /**********FOOTER*********/
 .footer{
     background-color: rgb(190, 89, 22);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .sociales-footer{
     color: black;
+    font-size: 40px;
 }
 
 .sociales-footer i:hover{
