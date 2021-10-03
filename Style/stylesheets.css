@@ -1,6 +1,3 @@
-/*Kaushan Script Google fonts Para los h1 de los liquidos*/
-
-
 body{
     margin: 0;
     padding: 0;
@@ -72,17 +69,16 @@ body{
 /* Descripcion */
 
 .descripcion{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     margin: 50px 50px;
+    padding-top: 40px;
+    padding-bottom: 70px;
 }
 
 .descripcion h1{
     text-align: center;
 }
-
-
-
-
-
 
 /**********GALERIA DE ITEMS**********/
 .galeria{
@@ -110,10 +106,30 @@ body{
     letter-spacing: 2px;
 }
 
-.img-liquido{
+.img-global{
     width: 100%;
     height: 97%;
-    background-image: url("/media/Bahamas.png");
+    background-size: cover;
+}
+
+
+.img-liquido-uno{
+    background-image: url("");
+}
+.img-liquido-dos{
+    background-image: url("/media/CitricPool.jpeg");
+}
+.img-liquido-tres{
+    background-image: url("/media/BikiniTits.jpeg");
+}
+.img-liquido-cuatro{
+    background-image: url("/media/CrunchyConch.jpeg");
+}
+.img-liquido-cinco{
+    background-image: url("/media/CherryBlast.jpeg");
+}
+.img-liquido-seis{
+    background-image: url("/media/grapeloop.png");
 }
 
 .contenido-img{
@@ -124,8 +140,6 @@ body{
     opacity: 0;
     transition: opacity 0.5s;
 }
-
-
 
 .contenido-img:hover{
     opacity: 1;
@@ -170,8 +184,6 @@ body{
     text-shadow: white 1px 1px;
 }
 
-
-
 .galeria-img h3{
     width: 100%;
     height: 3%;
@@ -179,13 +191,14 @@ body{
     justify-content: center;
     align-items: center;
 }
-
-
-
-
 /**********BTN MAS**********/
 .btn-ayuda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 30px;
 }
 
 .btn-ayuda button{
@@ -201,17 +214,23 @@ body{
     background-color: rgb(190, 22, 22);
 }
 
+.desc-bottom{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 /**********FOOTER*********/
 .footer{
     background-color: rgb(190, 89, 22);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 150px;
 }
 
 .sociales-footer{
     color: black;
     font-size: 40px;
+    letter-spacing: 20px;
 }
 
 .sociales-footer i:hover{
@@ -221,10 +240,14 @@ body{
 .contacto a{
     text-decoration: none;
     color: black;
+    font-size: 40px;
 }
 
 .copyright{
     color: black;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 
