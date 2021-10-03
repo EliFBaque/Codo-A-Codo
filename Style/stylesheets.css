@@ -1,3 +1,6 @@
+/*Kaushan Script Google fonts Para los h1 de los liquidos*/
+
+
 body{
     margin: 0;
     padding: 0;
@@ -103,6 +106,10 @@ body{
     
 }
 
+.galeria-img h3{
+    letter-spacing: 2px;
+}
+
 .img-liquido{
     width: 100%;
     height: 97%;
@@ -114,10 +121,8 @@ body{
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0);
     opacity: 0;
     transition: opacity 0.5s;
-    color: white;
 }
 
 
@@ -128,16 +133,42 @@ body{
     transform: background-color 0.5s;
 }
 
-.contenido-img h2{
+.contenido-img h1{
+    font-family: 'Kaushan Script', cursive;
     text-align: center;
     padding-top: 10px;
 }
 
 .contenido-img p{
     padding: 0px 20px 0px 20px;
-    font-size: 15px;
+    font-size: 20px;
+    color: white;
 }
 
+.liq-uno{
+    color: rgb(226, 43, 217);
+    text-shadow: white 1px 1px;
+}
+.liq-dos{
+    color: rgb(255, 123, 0);
+    text-shadow: white 1px 1px;
+}
+.liq-tres{
+    color: rgb(14, 122, 14);
+    text-shadow: white 1px 1px;
+}
+.liq-cuatro{
+    color: white;
+    text-shadow: orangered 1px 1px;
+}
+.liq-cinco{
+    color: red;
+    text-shadow: cyan 1px 1px;
+}
+.liq-seis{
+    color: darkorchid;
+    text-shadow: white 1px 1px;
+}
 
 
 
