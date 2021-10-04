@@ -81,6 +81,11 @@ body{
     text-align: center;
 }
 
+.titulo-galeria{
+    text-align: center;
+    padding: 10px;
+}
+
 /**********GALERIA DE ITEMS**********/
 .galeria{
     margin: 0;
@@ -101,6 +106,12 @@ body{
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.219) 2px 2px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.galeria-img:hover{
+    transform: translateY(-10px);
 }
 
 .galeria-img h3{
@@ -144,7 +155,6 @@ body{
 .contenido-img:hover{
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.411);
-    transform: background-color 0.5s;
 }
 
 .contenido-img h1{
@@ -331,13 +341,6 @@ body{
         width: 256px;
         height: 400px;
     }
-
-    .img-liquido{
-        background-image: url("/media/Bahamas.png");
-    }
-
-   
-
     /*********** BOTON ************/
     .btn-ayuda{
         display: flex;
@@ -358,37 +361,38 @@ body{
     }
     /*********** FOOTER ************/ /* Modificar Posiciones */
     .footer{
-        display: grid;
-        grid-template-areas: 
-        "social contacto"
-        "copyright copyright";
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: static;
     }
 
     .sociales-footer{
-        font-size: 30px;
-        grid-area: social;
-        text-align: center;
-        padding-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 18px;
     }
 
     .sociales-footer i{
-        margin: 4px;
+        font-size: 35px;
     }
 
     .contacto{
-        grid-area: contacto;
         text-align: center;
-        padding-top: 20px;
-        font-size: 18px;
+        width: 100%;
+    }
+    .contacto a{
+        font-size: 25px;
         font-weight: 600;
     }
 
     .copyright{
-        grid-area: copyright;
         text-align: center;
         font-size: 18px;
-        padding-top: 5px;
         font-weight: 500;
+        width: 100%;
     }
 
 
@@ -402,11 +406,6 @@ body{
     /*************************************/
     /*********** TITULO Y MENU ***********/
     /*************************************/
-    .titulo-galeria{
-        text-align: center;
-        border: 1px solid black;
-    }
-
     .menu{
         display: flex;
         justify-content: space-evenly;
