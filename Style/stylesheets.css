@@ -266,13 +266,16 @@ body{
 /***********************************************************************************************************************************************/
 .contenido-superior{
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
     background-color: blue;
 }
 
 .contenido-abajo{
     display: flex;
     width: 100%;
+    margin: 30px 0px 30px 0px;
 }
 
 .contenido-izquierda{
@@ -289,6 +292,12 @@ body{
 
 .contenido-izquierda li{
     padding: 5px 0px 5px 40px;
+    text-transform: uppercase;
+}
+
+.contenido-izquierda li:hover{
+    color: white;
+    cursor: pointer;
 }
 
 .contenido-izquierda h2{
@@ -307,9 +316,21 @@ body{
 
 .img-descripcion img{
     width: 230px;
-    height: 600px;
-    padding-left: 50px;
+    height: 100%;
     padding-right: 50px;
+}
+
+.descripcion-liquidos{
+    width: 400px;
+}
+
+.info-importante{
+    background-color: white;
+    display: flex;
+    padding: 50px;
+    margin: 40px 0px 40px 0px;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -424,7 +445,6 @@ body{
     }
 
     .sociales-footer{
-        width: 100%;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -455,7 +475,66 @@ body{
     /*************************************/
     /*********** GALERIA.HTML ************/
     /*************************************/
+    .contenido-superior{
+        display: none;
+    }
 
+    .contenido-abajo{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contenido-izquierda{
+        width: 100%;
+        display: flex;
+        padding: 0;
+    }
+
+    .contenido-izquierda ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    .contenido-izquierda li{
+        padding: 5px 0px 5px 0px;
+    }
+
+    .contenido-derecha{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .descripcion-liquidos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .descripcion-liquidos p{
+        width: 340px;
+        text-align: center;
+    }
+
+    .descripcion-liquidos h1{
+        text-align: center;
+    }
+
+
+
+    .img-descripcion{
+        display: none;
+    }
+
+    .info-importante{
+        display: none;
+    }
 
 
 
