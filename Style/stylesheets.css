@@ -125,7 +125,7 @@ body{
 }
 
 .img-liquido-uno{
-    background-image: url("");
+    background-image: url("/media/TartyBeach.jpeg");
 }
 .img-liquido-dos{
     background-image: url("/media/CitricPool.jpeg");
@@ -264,9 +264,54 @@ body{
 /***********************************************************************************************************************************************/
 /***************************************************************** GALERIA.HTML ****************************************************************/
 /***********************************************************************************************************************************************/
-.menu-contenidos ul{
-    list-style: none;
+.contenido-superior{
+    width: 100%;
+    text-align: center;
+    background-color: blue;
 }
+
+.contenido-abajo{
+    display: flex;
+    width: 100%;
+}
+
+.contenido-izquierda{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+}
+
+.contenido-izquierda ul{
+    list-style: none;
+    text-align: left; 
+}
+
+.contenido-izquierda li{
+    padding: 5px 0px 5px 40px;
+}
+
+.contenido-izquierda h2{
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenido-derecha{
+    width: 80%;
+    display: flex;
+    background-color: aqua;
+}
+
+.img-descripcion img{
+    width: 230px;
+    height: 600px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 
 /***********************************************************************************************************************************************/
 /***************************************************************** FORM.HTML *******************************************************************/
@@ -417,25 +462,7 @@ body{
     /*************************************/
     /*********** TITULO Y MENU ***********/
     /*************************************/
-    .menu{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;       
-    }
-
-    .contenidos-fila{
-        border: 1px solid black;
-        width: 100%;
-    }
-
-    .contenidos-fila p{
-        margin: 0;
-    }
-
-    /******* CONTENIDOS DEL MENU *******/
-    .contenidos-galeria{
-        border: 1px solid black;
-    }
+    
 }
 
 
