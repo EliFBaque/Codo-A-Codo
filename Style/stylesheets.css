@@ -379,6 +379,13 @@ body{
    height: 150px;
 }
 
+.notValid{
+    border: 1px red solid !important;
+}
+
+.isValid{
+    border: 1px green solid !important;
+}
 /****************** Mobile Tablet *******************/
 /************* Mobile IPHONE 6/7/8 PLUS *************/
 @media (min-width: 414px) and (max-width: 767px){
@@ -557,4 +564,8 @@ body{
     }
     /* FORM.HTML */
 }
+
+
+/* Validacion formulario class*/
+
 
