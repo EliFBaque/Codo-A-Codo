@@ -1,25 +1,20 @@
-var nombreInput = document.querySelector("#nombre") /* Listo  falta mostrar el error */
-var apellidoInput = document.querySelector("#apellido")/* Listo  falta mostrar el error */
-var emailInput = document.querySelector("#email")/* Listo falta mostrar el error */
-var tlfInput = document.querySelector("#telefono")/* Listo falta mostrar el error */
-var dirInput = document.querySelector("#direccion")/* Listo falta mostrar el error */
+var nombreInput = document.querySelector("#nombre")
+var apellidoInput = document.querySelector("#apellido")
+var emailInput = document.querySelector("#email")
+var tlfInput = document.querySelector("#telefono")
 var btn = document.querySelector(".btn")
+var btnVerificar = document.querySelector(".verificar")
 
-
-
-
-btn.addEventListener("click", function(){
-
+/* Evento para habilitar el boton de enviar*/
+btnVerificar.addEventListener("click", function(){
     VerificatorStr(nombreInput)
     VerificatorStr(apellidoInput)
     VerificacionTlf(tlfInput)
-    // Ya contestado por profesor
-}) 
-
-/* Email verificar que tenga 1 => @ 1 o 2 . y la parte del nick no tenga signos raros */ 
-/* Dir un string y un numero o solo 1 string*/
-/* tlf q sea solo un numero*/ 
-
+    VerificacionEmail(emailInput)
+    if(VerificatorStr(nombreInput)&& VerificatorStr(apellidoInput) && VerificacionTlf(tlfInput) && VerificacionEmail(emailInput)){
+        btn.removeAttribute("disabled")
+    }
+})
 
 /* Funcion de verificacion de que sea un string completo*/
 function VerificatorStr(input){
@@ -34,23 +29,25 @@ function VerificatorStr(input){
             }
         }
         if(error == 0){
-            /* Decirle que todo esta perfecto con ese input*/
-            console.log("Todo Perfecto")
+            /* Decirle que todo esta perfecto con ese input y devuelve true*/
+            input.classList.remove("notValid")
+            input.classList.add("isValid")
+            return true
+
         }
         else{
-            /* Hace el cambio del error*/
-            console.log("Lamentablemente hubo un error")
+            /* Hace el cambio del error y devuelve false*/
+            input.classList.add("notValid")
+            return false
         }
     }
     else{
-        /* Hace el cambio del error*/
-        console.log("Lamentablemente hubo un error")
+        /* Hace el cambio del error y devuelve false*/
+        input.classList.add("notValid")
+        return false
     }
-
 }
-
 /* Funcion Input Telefono*/
-
 function VerificacionTlf(input){
     inputVacio(input)
     valor = input.value
@@ -59,20 +56,23 @@ function VerificacionTlf(input){
         for (let i = 0; i < valor.length; i++) {
             if(isNaN(parseInt(valor[i]))){
                 error = 1
-                console.log("Valor no valido")
                 break
             }
         }
+        /* Si todo esta bien devuelve true*/
         if(error == 0){
-            console.log("Todo correcto" + error)
+            console.log("Todo correcto")
+            input.classList.remove("notValid")
+            input.classList.add("isValid")
+            return true
         }
     }
     else{
-        console.log("Te haz pasado de numeros")
+        /* Si algo esta mal devuelve false*/
+        input.classList.add("notValid")
+        return false
     }
 }
-
-
 /* Funcion Para ver si el string esta vacio*/
 function inputVacio(input){
     error = 0
@@ -80,12 +80,10 @@ function inputVacio(input){
        return error += 1
     }
 }
-
 /* Funcion para verificacion de email*/
-
 function VerificacionEmail(input){
+    inputVacio(input)
     valor = input.value
-    
     /* Verificacion de @*/ 
     cantidad = 0
     for (let i = 0; i < valor.length; i++) {
@@ -93,39 +91,67 @@ function VerificacionEmail(input){
             cantidad += 1
         }
     }
-
     /* Separar el email desde el @ para verificar luego sus datos*/
-    if(cantidad > 1){
-        console.log("Lamentablemente tienes mas de 1 @ en su email.")
-        return console.log("error")
+    if(cantidad > 1 || error == 1){
+        console.log("Lamentablemente tienes mas de 1 @ en su email. o esta vacio")
+        validacion = false
+        input.classList.add("notValid")
     }
     else{
         arrayEmail = valor.split("@")
         nick = arrayEmail[0]
         terminacion = arrayEmail[1].split(".")
+        validacion = true
         console.log("Todo Perfecto")
     }
     /* Verificacion del nick del email EJ elifbaque*/
-    for (let i = 0; i < nick.length; i++) {
-        if(nick[i].toUpperCase().charCodeAt(0) > 64 && nick[i].toUpperCase().charCodeAt(0) < 91){
-            console.log("Banana")
-        } 
-        else if(!(isNaN(parseInt(nick[i]))) || nick[i] == "."){
-            console.log("es un numero o un .")
+    if(validacion == true){
+        for (let i = 0; i < nick.length; i++) {
+            if(nick[i].toUpperCase().charCodeAt(0) > 64 && nick[i].toUpperCase().charCodeAt(0) < 91){
+                nickCompleto = true
+            } 
+            else if(!(isNaN(parseInt(nick[i]))) || nick[i] == "."){
+                nickCompleto = true
+            }
+            else{
+                input.classList.add("notValid")
+                nickCompleto = false
+                break
+            }
         }
-    }
-    /* Verificacion de la terminacion Gmail hotmail etc si es solo letras */ 
-    for (let i = 0; i < terminacion[0].length; i++) {
-        if(terminacion[0][i].toUpperCase().charCodeAt(0) > 64 && terminacion[0][i].toUpperCase().charCodeAt(0) < 91){
-            console.log("Banana")
+        /* Verificacion de la terminacion Gmail hotmail etc si es solo letras */ 
+        for (let i = 0; i < terminacion[0].length; i++) {
+            if(terminacion[0][i].toUpperCase().charCodeAt(0) > 64 && terminacion[0][i].toUpperCase().charCodeAt(0) < 91){
+                terminacionUno = true
+            }
+            else{
+                input.classList.add("notValid")
+                terminacionUno = false
+                break
+            }  
+        }
+        if(nickCompleto == true && terminacionUno == true){
+            if((terminacion[1] == "com" || terminacion[1] == "ar") || terminacion[1] == "com" && terminacion[2] == "ar"){
+                terminacionDos = true
+            }
+            else{
+                input.classList.add("notValid")
+                terminacionDos = false
+            }
         }
         else{
-            return console.log("error")
-        } 
-        
-    }
-    /* Verificacion si la terminacion es com o ar,com.ar*/
-    if((terminacion[1] == "com" || terminacion[1] == "ar") || terminacion[1] == "com" && terminacion[2] == "ar"){
-        console.log("ok")
-    }
+            return false
+        }
+        /* Verificacion si la terminacion es com o ar,com.ar*/
+        if(nickCompleto == true && terminacionUno == true && terminacionDos == true){
+            console.log("Todo el email esta perfecto")
+            input.classList.remove("notValid")
+            input.classList.add("isValid")
+            return true 
+        }
+        else{
+            input.classList.add("notValid")
+            return false
+        }
+    }  
 }
