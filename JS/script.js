@@ -1,8 +1,8 @@
-var nombreInput = document.querySelector("#nombre") /* Listo  falta mostrar el error*/
-var apellidoInput = document.querySelector("#apellido")/* Listo  falta mostrar el error*/
-var emailInput = document.querySelector("#email")/* */
-var tlfInput = document.querySelector("#telefono")/* */
-var dirInput = document.querySelector("#direccion")/* */
+var nombreInput = document.querySelector("#nombre") /* Listo  falta mostrar el error */
+var apellidoInput = document.querySelector("#apellido")/* Listo  falta mostrar el error */
+var emailInput = document.querySelector("#email")/* Listo falta mostrar el error */
+var tlfInput = document.querySelector("#telefono")/* Listo falta mostrar el error */
+var dirInput = document.querySelector("#direccion")/* Listo falta mostrar el error */
 var btn = document.querySelector(".btn")
 
 
@@ -10,10 +10,11 @@ var btn = document.querySelector(".btn")
 
 btn.addEventListener("click", function(){
 
-    // Preguntar al Profesor
+    VerificatorStr(nombreInput)
+    VerificatorStr(apellidoInput)
+    VerificacionTlf(tlfInput)
+    // Ya contestado por profesor
 }) 
-
-
 
 /* Email verificar que tenga 1 => @ 1 o 2 . y la parte del nick no tenga signos raros */ 
 /* Dir un string y un numero o solo 1 string*/
@@ -24,6 +25,7 @@ btn.addEventListener("click", function(){
 function VerificatorStr(input){
     inputVacio(input)
     valor = input.value
+    /* Verificar que no tenga numeros , ya que es Nombre y Apellido*/
     if(error == 0 && valor.length <= 20){
         for (let i = 0; i < valor.length ; i++){
             if(Number(valor[i]) || valor[i] == "-" || valor[i] == "_"){
@@ -52,6 +54,7 @@ function VerificatorStr(input){
 function VerificacionTlf(input){
     inputVacio(input)
     valor = input.value
+    /* Si no es un numero detiene el bucle y pasa al error*/
     if(valor.length <= 10 && error == 0){
         for (let i = 0; i < valor.length; i++) {
             if(isNaN(parseInt(valor[i]))){
@@ -65,7 +68,7 @@ function VerificacionTlf(input){
         }
     }
     else{
-        console.log("Cadena vacia")
+        console.log("Te haz pasado de numeros")
     }
 }
 
@@ -78,3 +81,51 @@ function inputVacio(input){
     }
 }
 
+/* Funcion para verificacion de email*/
+
+function VerificacionEmail(input){
+    valor = input.value
+    
+    /* Verificacion de @*/ 
+    cantidad = 0
+    for (let i = 0; i < valor.length; i++) {
+        if(valor[i] == "@"){
+            cantidad += 1
+        }
+    }
+
+    /* Separar el email desde el @ para verificar luego sus datos*/
+    if(cantidad > 1){
+        console.log("Lamentablemente tienes mas de 1 @ en su email.")
+        return console.log("error")
+    }
+    else{
+        arrayEmail = valor.split("@")
+        nick = arrayEmail[0]
+        terminacion = arrayEmail[1].split(".")
+        console.log("Todo Perfecto")
+    }
+    /* Verificacion del nick del email EJ elifbaque*/
+    for (let i = 0; i < nick.length; i++) {
+        if(nick[i].toUpperCase().charCodeAt(0) > 64 && nick[i].toUpperCase().charCodeAt(0) < 91){
+            console.log("Banana")
+        } 
+        else if(!(isNaN(parseInt(nick[i]))) || nick[i] == "."){
+            console.log("es un numero o un .")
+        }
+    }
+    /* Verificacion de la terminacion Gmail hotmail etc si es solo letras */ 
+    for (let i = 0; i < terminacion[0].length; i++) {
+        if(terminacion[0][i].toUpperCase().charCodeAt(0) > 64 && terminacion[0][i].toUpperCase().charCodeAt(0) < 91){
+            console.log("Banana")
+        }
+        else{
+            return console.log("error")
+        } 
+        
+    }
+    /* Verificacion si la terminacion es com o ar,com.ar*/
+    if((terminacion[1] == "com" || terminacion[1] == "ar") || terminacion[1] == "com" && terminacion[2] == "ar"){
+        console.log("ok")
+    }
+}
